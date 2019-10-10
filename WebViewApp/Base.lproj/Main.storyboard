@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebViewApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fF-eU-lun">
+                                <rect key="frame" x="0.0" y="80" width="414" height="782"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIj-lt-2HK">
+                                <rect key="frame" x="20" y="42" width="105" height="30"/>
+                                <state key="normal" title="Load web page"/>
+                                <connections>
+                                    <action selector="loadWebPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JZM-pf-Bft"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyd-ag-668">
+                                <rect key="frame" x="182" y="47" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3Xu-nS-gdF">
+                                <rect key="frame" x="374" y="47" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Xu-nS-gdF" secondAttribute="trailing" constant="20" id="28X-cs-Qy3"/>
+                            <constraint firstItem="7fF-eU-lun" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F1i-65-Rv0"/>
+                            <constraint firstItem="yIj-lt-2HK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FI0-jo-DX9"/>
+                            <constraint firstItem="7fF-eU-lun" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bgA-Dm-3Ga"/>
+                            <constraint firstItem="tyd-ag-668" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="cdn-Jy-Nnv"/>
+                            <constraint firstItem="yIj-lt-2HK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="42" id="coF-0i-Hdj"/>
+                            <constraint firstItem="7fF-eU-lun" firstAttribute="top" secondItem="yIj-lt-2HK" secondAttribute="bottom" constant="8" id="f8l-Vs-v9v"/>
+                            <constraint firstItem="3Xu-nS-gdF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="nhj-lK-DQN"/>
+                            <constraint firstItem="7fF-eU-lun" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ohk-vn-SyS"/>
+                            <constraint firstItem="tyd-ag-668" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wQP-v3-EjL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="3Xu-nS-gdF" id="cZQ-8l-8u3"/>
+                        <outlet property="loadWebPageButton" destination="yIj-lt-2HK" id="9G6-6D-U3D"/>
+                        <outlet property="statusLabel" destination="tyd-ag-668" id="FbD-GM-ukU"/>
+                        <outlet property="webView" destination="7fF-eU-lun" id="9Gd-mc-tCx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
